@@ -1,6 +1,6 @@
 <idea-plugin>
     <id>com.github.punkkk.molplugin.tree</id>
-    <name>Tree</name>
+    <name>Tree syntax highlighter</name>
     <version>0.1</version>
     <vendor email="punkkkrus18@gmail.com">Punkkk</vendor>
 
