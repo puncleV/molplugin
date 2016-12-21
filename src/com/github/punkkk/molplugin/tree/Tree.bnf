@@ -1,0 +1,28 @@
+{
+  parserClass="com.github.punkkk.molplugin.tree.TreeParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="Tree"
+  psiImplClassSuffix="Impl"
+  psiPackage="com.github.punkkk.molplugin.tree.psi"
+  psiImplPackage="com.github.punkkk.molplugin.tree.psi.impl"
+
+  elementTypeHolderClass="com.github.punkkk.molplugin.tree.psi.TreeTypes"
+  elementTypeClass="com.github.punkkk.molplugin.tree.psi.TreeElementType"
+  tokenTypeClass="com.github.punkkk.molplugin.tree.psi.TreeTokenType"
+
+  psiImplUtilClass="com.github.punkkk.molplugin.tree.psi.impl.TreePsiImplUtil"
+}
+
+simpleFile ::= (property|COMMENT)*
+
+property ::= (KEY SEPARATOR VALUE?)|KEY {
+    pin=3
+    recoverWhile="recover_property"
+    mixin="com.github.punkkk.molplugin.tree.psi.impl.TreeNamedElementImpl"
+    implements="com.github.punkkk.molplugin.tree.psi.TreeNamedElement"
+    methods=[getKey getValue getName setName getNameIdentifier getPresentation]
+}
+
+private recover_property ::= !(KEY|SEPARATOR|COMMENT)
