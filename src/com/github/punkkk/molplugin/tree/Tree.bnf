@@ -1,5 +1,7 @@
 {
   parserClass="com.github.punkkk.molplugin.tree.parser.TreeParser"
+  parserUtilClass="com.github.punkkk.molplugin.tree.parser.TreeParserUtil"
+//  parserUtilClass="com.github.punkkk.molplugin.tree.parser.TreeParserUtil"
 
   extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
 
